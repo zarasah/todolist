@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: grey;
+}
+
+body {
+    background-image: url('sources/desk.jpg');
+    background-size: cover;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-size: 130px;
+}
+
+.input-fild {
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.input-fild:focus {
+    outline-color:grey;
+    }
+
+.input-fild::placeholder {
+    font-style: italic;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    font-style: italic;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+button:hover {
+    cursor: pointer;
+    border: 1px solid grey;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskList {
+    width: 400px;
+    height: 30px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.task {
+    background-color: white;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.task p {
+    padding-top: 5px;
+    width: 150px;
+    word-break:break-all;
+}
+
+.task button {
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.task input {
+    margin-left: 5px;
+}
+
+.delete {
+    text-decoration: line-through;
+}

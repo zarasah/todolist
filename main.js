@@ -1,7 +1,8 @@
 const input = document.querySelector('#input');
 const addBtn = document.querySelector('#add');
 const list = document.querySelector('#taskList');
-const form = document.querySelector('form')
+const form = document.querySelector('form');
+const wrapper = document.querySelector('.wrapper');
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -36,5 +37,33 @@ form.addEventListener('submit', function (event) {
     del.addEventListener('click', function(event) {
         const item = event.target.closest('div');
         item.remove();
+
+        const itemsArr = document.querySelectorAll('.task');
+
+        if (itemsArr.length === 0) {
+            document.querySelector('.footer').remove();
+        }
     })
+
+    if (!document.querySelector('.footer')) {
+        createFooter(list);
+    }
 })
+
+function createFooter() {
+    const footer = document.createElement('div');
+    const clean = document.createElement('button');
+    const clear = document.createElement('button');
+
+    footer.classList.add('footer');
+    clean.textContent = 'Clean All List';
+    clear.textContent = 'Clear Completed';
+
+    clean.addEventListener('click', () => {
+        list.textContent = '';
+        footer.remove();
+    })
+
+    footer.append(clean, clear);
+    wrapper.appendChild(footer);
+}

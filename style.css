@@ -90,6 +90,10 @@ button:hover {
     margin-left: 5px;
 }
 
+.task input:hover {
+    cursor: pointer;
+}
+
 .delete {
     text-decoration: line-through;
 }

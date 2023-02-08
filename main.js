@@ -64,6 +64,22 @@ function createFooter() {
         footer.remove();
     })
 
+    clear.addEventListener('click', () => {
+        const itemsArr = document.querySelectorAll('div.task > input');
+        let checked = 0;
+
+        itemsArr.forEach((cur) => {
+            if (cur.checked) {
+                checked++;
+                cur.closest('div').remove();
+            }
+        })
+
+        if (itemsArr.length === checked) {
+            footer.remove();
+        }
+    })
+
     footer.append(clean, clear);
     wrapper.appendChild(footer);
 }
